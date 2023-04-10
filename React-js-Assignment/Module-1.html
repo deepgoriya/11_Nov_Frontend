@@ -1,0 +1,438 @@
+<!-- 1). What is HTML5?
+	Hypertext Markup language  Revision 5.
+	It is more stable then HTML.
+	It is a markup language  for the structure and presentation of www contest.
+	It is support traditional HTML and X-HTML  style syntax and other new features in its markup, New API , XHTML and error heading.
+
+2). What is HTML5 structure Based tag?
+	<header>,<nav>,<section>,<main>,<aside>,<article>,<footer> etc……
+
+3). What is HTML5 Content Based Tag?
+	<svg>,<canvas>,<figure>,<figurecap>,<fieldset>,<datalist>,<audio>,<video>,<bdi>,<data>,<hgroup>,<mark>,<picture>,<progress>,<source>,<summary>,<time>,<wbr> etc……
+
+4). What is CSS?
+	CSS is cast coding stylesheet.
+	It is use to apply style our html document and make attractive our website.
+
+5). What is Transition and Transform in CSS3?
+	Transition: It is css3 property use to apply time in effect.
+	Transform: It is css3 property use to apply 2D,3D transformation on element.
+
+6). What is 2D transform in CSS3?
+	It is properties in css3 to create two Dimension effect on element
+1.	Translate
+2.	Rotate
+3.	Scale
+4.	scaleX
+5.	scaleY
+6.	skew
+7.	skewX
+8.	skewY
+9.	matrix
+
+7). What is JavaScript?
+	JavaScript is a client’s side scripting language.
+	It is a programing language that allows you to implement complex features on web pages
+	It creates dynamically updating content, control multimedia, animate images, and pretty much everything else. 
+
+8). What is JavaScript Boxes?
+	The JavaScript boxes is alert boxes message in webpage .
+	There are three types of JavaScript boxes.
+
+9). What is JavaScript events?
+	JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page.
+	JavaScript events is a use to run some process through events. 
+	When the page is load it’s called events.
+	When the user click on the button it’s also called events.
+
+10). What is JavaScript Output methods?
+	JavaScript Output methods is method use to print data on screen. 
+	There are so many types of Output methods in JavaScript.
+1.	Colsol.log(“”)
+2.	document.write(“”)
+3.	window.alert(“”)
+4.	document.gatElementById(“”)
+5.	document.gatElementByClassname(“”)
+6.	document.gatElementByTagname(“”)
+7.	document.gatElementById(“”).innerHTML
+
+11). How to use JavaScript Output methods?
+	There are so many Output methods in JavaScript to print o screen.
+	There are some examples of output methods as under.
+	EXAMPLES..
+	<form>
+<input type=”text” name=”Fname” id=”firstname”  class=”firstname”  placeholder=”Enter Your Name” required>
+	       </form>
+1.	Consol.log(“Hi , I am rancho”)
+2.	document.write(“Hi , I am rancho”)
+3.	document.getElementById(“firstname”)
+4.	document.getElementByclassName(“firstname”)
+5.	document.getElementBytagName(“input”)
+6.	document.getElementBytagName(“input”).value
+7.	document.getElementBytagName(“form”).innerHTML
+8.	window.location(“www.facebook.com”)   
+etc……..
+
+12). How to used JavaScript Events to Do all examples? 
+	Basically there are three main Events in JavaScript
+1.	Mouse Events
+	onclick()
+	ondblclick()
+	onmouseup()
+	onmousedown()
+	onmouseenter()
+	onmouseleave()
+	onmouseover()
+	etc…
+
+2.	Key-Board Events
+	Onkeypress()
+	Onkeydown()
+	Onkeyup()
+
+3.	Window Events
+	Onload()
+	OnUnload()
+	onafterprint()
+	onbeforeprint()
+	onbeforeunload()
+	onerror()
+	onresize()
+	ononline()
+	onoffline()
+	etc…..
+
+13). Calculate Subtotal price of quality in JavaScript?
+	Here is the demo code and output of Subtotal price of quality in JavaScript -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black !important;
+        }
+
+        td {
+            width: 20% !important;
+        }
+
+        input {
+            width: 90%;
+            padding: 2%;
+        }
+
+        td i {
+            cursor: pointer;
+        }
+    </style>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- bootstrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container mx-auto mt-5 shadow p-5">
+        <table class="cart text-center">
+            <h2>Cart</h2>
+            <hr>
+            <thead>
+                <tr>
+                    <th>Product Info</th>
+                    <th>Quantity</th>
+                    <th>Price (per unit in $)</th>
+                    <th>Price (Subtotal in $)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="mochaaa">
+                    <td>
+                        <img src="mocha.jpg" class="img-fluid w-50 "> <br>
+                        Fortunata Window Hardware - Decorative Holdback -   Mocha
+                    </td>
+                    <td><input type="number" minlength="1" maxlength="10" value="2" id="mochaqty"
+                            onchange="changhmocha()"></td>
+                    <td><input type="text" value="29.99" id="mochaprice" readonly></td>
+                    <td><input type="text" value="59.98" id="mochasubtotle"></td>
+                    <td><i class="bi bi-trash-fill text-danger" onclick="document.getElementById('mochaaa').style.display = 'none'"></i></td>
+                </tr>
+                <tr id="bronzeee">
+                    <td>
+                        <img src="bronze.jpg" class="img-fluid w-50"> <br>
+                        Woven Trellies Window Hardware - Clip Rings - Bronze
+                    </td>
+                    <td><input type="number" minlength="1" maxlength="10" value="1" id="bronzeqty"
+                            onchange="changbronze()"></td>
+                    <td><input type="text" value="19.99" id="bronzeprice" readonly></td>
+                    <td><input type="text" value="19.99" id="bronzesubtotle"></td>
+                    <td><i class="bi bi-trash-fill text-danger" onclick="document.getElementById('bronzeee').style.display = 'none'"></i></td>
+                </tr>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="text" id="totalprice" value="79.98" class="w-100 float-end p-2 fs-5">
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+
+        // for Fortunata Window Hardware - Decorative Holdback - Mocha
+        function changhmocha() {
+            var mochaqty = document.getElementById("mochaqty").value;
+            var mochaprice = document.getElementById("mochaprice").value;
+            var mochasubtotle = mochaqty * mochaprice
+
+            document.getElementById("mochasubtotle").value = mochasubtotle;
+        }
+
+        // for Woven Trellies Window Hardware - Clip Rings - Bronze
+        function changbronze() {
+            var bronzeqty = document.getElementById("bronzeqty").value;
+            var bronzeprice = document.getElementById("bronzeprice").value;
+            var bronzesubtotle = bronzeqty * bronzeprice
+
+            document.getElementById("bronzesubtotle").value = bronzesubtotle;
+        }
+
+        // total prize 
+        var mochasubtotle = parseInt(document.getElementById("mochasubtotle").value);
+        var bronzesubtotle = parseInt(document.getElementById("bronzesubtotle").value);
+        var totalprize = mochasubtotle + bronzesubtotle
+
+        document.getElementById("totalprice").value = totalprize;
+
+        function removemocha(){
+            document.getElementsByClassName("mocha").style.display="none"
+        }
+
+        function removebronze(){
+            document.getElementsByClassName("bronze").style.display="none"
+        }
+
+
+    </script>
+</body>
+
+</html>
+ 
+
+<!-- 14). How to change image using onchange Events in JavaScript? -->
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Change Image Example</title>
+</head>
+<body>
+	<h1>Change Image Example</h1>
+	<input type="file" onchange="loadFile(event)">
+	<br><br>
+	<img id="output" width="200">
+	
+	<script>
+		var loadFile = function(event) {
+			var image = document.getElementById('output');
+			image.src = URL.createObjectURL(event.target.files[0]);
+		};
+	</script>
+</body>
+</html>
+
+
+
+<!-- 15). Write an example of JavaScript Onblur event?
+	Example of Onblur Event: -->
+<!DOCTYPE html>
+<html>
+<head>
+		<title>transition Example</title>
+	</head>
+	<body>
+		<form>
+			<label for=”name”> Name : </label>
+			<input type=”text” id=”name” Onblur=”validname()”>
+<Script>
+		Function validname(){
+			let nameip= document.getElementById(‘name’);
+			let name= nameip.value;
+
+			If(name == “”){
+				alert(“Please enter your name” ) 
+				nameip.focus();
+}
+}
+</script>
+
+<!-- 16). Write an example of transition and transform attributes of css3 in web page? -->
+	Example of transition :
+<!DOCTYPE html>
+<html>
+<head>
+			<title>transition Example</title>
+			<style>
+				. change {
+					Padding:3%  5%;
+					Background-color:darkred;
+					Transition: 1s ease all
+				}
+				. change:hover{
+					Background-color:yello;
+				}
+</style>
+</head>
+<body>
+		<div class=”change”>
+Lorem ipsum write code when you meet your brother and play games watch movie etc…….
+		</div>
+	</body>
+</html>
+
+
+<!-- 	Example of Transform:  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transform Example</title>
+	<style>
+		.move{
+			Transform:translet(100  300);
+			Transform:rotate(100deg);
+			Transform:skew(100, 300);
+			Transform:scale(2);
+		}
+</style>
+</head>
+<body>
+	<div class=”move”>
+Lorem ipsum write code when you meet your brother and play games watch movie etc…….
+	</div>
+	</body>
+</html>
+
+
+<!-- 17). Make an small calculator to add ,substracts and divide of two numbers in JavaScript.
+	Here is the demo code and output of calculator to add, substracts and divide of two numbers using JavaScript -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 50px;
+        }
+        #box{
+            background-color: chocolate;
+            border-radius: 20px;
+            padding: 20px;
+            width: 25%;
+            text-align: center;
+            margin:80px 500px ;
+            transition: 1s ease;
+        }
+        #box:hover{
+            box-shadow: 0px 0px 20px 10px black;
+        }
+        label{
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        select{
+            font-size: 25px;
+            font-weight: bolder;
+            border-radius: 5px;
+            text-align: center;
+        }
+        input{
+            padding: 5px;
+            border-radius: 10px;
+        }
+        button{
+            font-size: 20px;
+            width: 30px;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color:black ;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="box">
+        <label for="">A : </label>
+        <input type="number" id="v1" value=""><br><br>
+        <select name="operatore" id="opt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value=""></option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select><br><br>
+        <label for="">B : </label>
+        <input type="number" id="v2" value=""><br><br>
+        <button type="button" id="btn" onclick="clc()">=</button><br><br>
+        <label for="">Result : </label>
+        <input id="result">
+    </div>
+
+    <script>
+        function clc(){
+            var a=parseInt(document.getElementById("v1").value);
+            var b=parseInt(document.getElementById("v2").value);
+            var oprt=document.getElementById("opt").value;
+
+            if (oprt === "+"){
+                document.getElementById('result').value = a + b;
+            }
+            else if (oprt === "-"){
+                document.getElementById('result').value = a - b;
+            }
+            else if (oprt === "*"){
+                document.getElementById('result').value = a * b;
+            }
+            else if(oprt === "/"){
+                document.getElementById('result').value = a / b;
+            }
+            else{
+                document.getElementById('result').value = a % b;
+            }
+        }
+    </script>
+</body>
+</html>
